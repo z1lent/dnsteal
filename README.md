@@ -1,6 +1,7 @@
 # DNSTEAL
 
 Custom version modified by [z1lent](https://github.com/z1lent)
+
 Original version: [dnsteal](https://github.com/m57/dnsteal)
 
 This program creates a fake DNS server that allows stealthy file extraction using DNS from a victim's machine using DNS requests.
