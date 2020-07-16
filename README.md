@@ -1,14 +1,35 @@
 # DNSTEAL
 
-Custom version modified by [z1lent](https://github.com/z1lent)
-Original version: [dnsteal](https://github.com/m57/dnsteal)
+## custom version modified by z1lent
 
-This program creates a fake DNS server that allows stealthy file extraction using DNS from a victim's machine using DNS requests.
-### Installation
+This is a fake DNS server that allows you to stealthily extract files from a victim machine through DNS requests. 
 
-Download all files onto server for receiving files
-Execute the programing using python
+Below are a couple of different images showing examples of multiple file transfer and single verbose file transfer:
 
-    python dnsteal.py $SERVER_IP -v
+![Alt text](http://i.imgur.com/nJsoAMv.png)
 
-Copy prompted command and execute on victim's machine.
+* Support for multiple files
+* Gzip compression supported
+* Now supports the customisation of subdomains and bytes per subdomain and the length of filename
+
+See help below:
+
+![Alt text](http://i.imgur.com/GT5SV2L.png)
+
+If you do not understand the help, then just use the program with default options!
+
+```bash
+python dnsteal.py 127.0.0.1 -z -v
+```
+
+This one would send 45 bytes per subdomain, of which there are 4 in the query. 15 bytes reserved for filename at the end.
+
+```bash
+python dnsteal.py 127.0.0.1 -z -v -b 45 -s 4 -f 15
+```
+
+This one would leave no space for filename.
+
+```bash
+python dnsteal.py 127.0.0.1 -z -v -b 63 -s 4 -f 0
+```
